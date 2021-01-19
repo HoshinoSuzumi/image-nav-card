@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Image Nav</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(34, 34, 34);
+        }
+
+        .frame {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: calc(100% - 100px);
+            padding: 1.5rem;
+            border-radius: 25px 25px 0 0;
+            box-shadow: 5px -5px 20px rgba(0, 0, 0, .15);
+            background-color: #fff;
+            transition: height .3s ease-in-out;
+        }
+
+        .frame.active {
+            transition: none;
+        }
+
+        .nav {
+            display: flex;
+            overflow-x: auto;
+            margin: 0 0 15px 0;
+        }
+
+        .nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .handle {
+            width: 20px;
+            height: 4px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(204, 204, 204);
+            margin: -15px auto 10px auto;
+            cursor: pointer;
+        }
+
+        .item {
+            flex: none;
+            color: #fff;
+            width: 88px;
+            margin-right: 8px;
+            padding: .6rem;
+            border-radius: 10px;
+            background-size: 125%;
+            background-position: top;
+            background-position-y: center;
+            object-fit: cover;
+            cursor: pointer;
+            will-change: padding;
+            transition-property: padding;
+            transition: all .15s ease-in-out;
+        }
+
+        .nav.expanded .item {
+            padding-bottom: 3rem;
+        }
+
+        .item:last-child {
+            margin-right: 0;
+        }
+
+        .item h5 {
+            pointer-events: none;
+            user-select: none;
+            margin: 0;
+        }
+
+        .item .underline {
+            pointer-events: none;
+            visibility: hidden;
+            width: 1.2rem;
+            height: 4px;
+            background: #fff;
+            border-radius: 6px;
+        }
+
+        .item.active .underline {
+            visibility: visible;
+        }
+
+        .content {
+            height: 100%;
+            overflow-y: scroll;
+        }
+
+        .content::-webkit-scrollbar {
+            display: none;
+        }
+
+        .content pre {
+            text-indent: 2rem;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            *word-wrap: break-word;
+            *white-space: normal;
+        }
+
+        .content pre:last-child {
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="handle"></div>
+        <div class="nav expanded">
+            <div class="item" id="all" style="background-image: url('img/nav1.jpg')">
+                <h5>全部</h5>
+                <div class="underline"></div>
+            </div>
+            <div class="item" id="landscape" style="background-image: url('img/nav2.jpg')">
+                <h5>风景</h5>
+                <div class="underline"></div>
+            </div>
+            <div class="item" id="building" style="background-image: url('img/nav3.jpg')">
+                <h5>建筑</h5>
+                <div class="underline"></div>
+            </div>
+            <div class="item" id="animals" style="background-image: url('img/nav2.jpg')">
+                <h5>动物</h5>
+                <div class="underline"></div>
+            </div>
+            <div class="item" id="starsky" style="background-image: url('img/nav3.jpg')">
+                <h5>星空</h5>
+                <div class="underline"></div>
+            </div>
+            <div class="item" id="other" style="background-image: url('img/nav2.jpg')">
+                <h5>其他</h5>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <div class="content">
+            <pre>Laborum commodo excepteur mollit ex exercitation exercitation deserunt deserunt. Eu enim esse tempor ex id cillum culpa. Excepteur ullamco ea fugiat ea.</pre>
+            <pre>Et ullamco incididunt qui dolor quis qui ut ipsum officia sunt eu duis exercitation adipisicing. Ad ullamco adipisicing ipsum quis aute nulla Lorem in. Occaecat ut ad deserunt sunt reprehenderit non nisi et dolor. Occaecat do consectetur eiusmod reprehenderit elit sit magna occaecat est. Aliqua duis nulla dolore et sint eiusmod eiusmod aliqua occaecat incididunt esse. Ipsum ut est sit occaecat laborum exercitation incididunt veniam deserunt proident.</pre>
+            <pre>Ad ipsum dolore consequat tempor. Nostrud aute qui eu nulla minim nisi sunt ipsum do consequat consectetur consectetur laborum. Ea eiusmod ut ullamco officia esse adipisicing. Esse culpa labore aute est et proident fugiat ea est nulla proident reprehenderit ipsum. Magna in ipsum voluptate in nostrud cupidatat eiusmod occaecat eu voluptate.</pre>
+            <pre>Lorem ipsum minim magna velit exercitation ea magna et nisi veniam magna dolor. Incididunt officia velit minim non cupidatat exercitation amet esse duis aliquip. Fugiat elit sint non ut et voluptate pariatur. Quis occaecat adipisicing qui aute ex nisi in commodo qui culpa consectetur ipsum sunt enim. Consequat ipsum fugiat et Lorem pariatur sunt. Sunt elit laboris qui incididunt reprehenderit sunt id esse elit irure aute ea veniam.</pre>
+            <pre>Excepteur dolor anim est irure id aliqua voluptate amet minim irure et. Deserunt minim ex exercitation ipsum duis. Esse velit aliqua nulla cillum laboris aliquip duis fugiat ullamco magna. Qui ullamco eu minim ipsum elit ad aliqua adipisicing do amet veniam. Reprehenderit minim mollit minim duis consectetur veniam do eiusmod officia. Eu nisi ea et consequat mollit reprehenderit.</pre>
+            <pre>Ex dolor laborum velit minim cupidatat magna. Et amet in commodo Lorem enim sunt proident qui exercitation id velit pariatur consectetur sit. Ex veniam non magna aliqua reprehenderit elit consectetur ad excepteur velit elit reprehenderit dolore ullamco.</pre>
+            <pre>Amet aliqua anim occaecat adipisicing consectetur voluptate laborum et sint occaecat occaecat. Est laboris quis elit aute ut dolor exercitation. Ipsum deserunt minim fugiat esse ex adipisicing cupidatat culpa laboris ullamco sint occaecat veniam. Ex dolore cupidatat sunt aliquip dolore cillum sit ad mollit cillum enim elit reprehenderit tempor. Aliqua ea aliqua et tempor aliquip est quis consequat labore cillum consequat ad aute.</pre>
+            <pre>Proident nostrud eu irure cillum voluptate amet nulla esse nisi officia sunt consequat dolore culpa. Ex dolor veniam anim duis dolor sit nostrud anim. Aliquip consequat nostrud Lorem eiusmod eiusmod.</pre>
+        </div>
+    </div>
+
+    <script>
+        const nav = document.querySelector('.nav');
+        const navs = document.querySelectorAll('.nav .item');
+        const frame = document.querySelector('.frame');
+        const content = document.querySelector('.content');
+        const handle = document.querySelector('.handle');
+
+        let scrollTop = content.scrollTop;
+
+        navs.forEach(elem => {
+            elem.$active = elem.classList.contains('active');
+            Object.defineProperty(elem, 'active',
+                {
+                    get: function () {
+                        this.$active = this.classList.contains('active');
+                        return this.$active;
+                    },
+                    set: function (isActive) {
+                        (this.$active = isActive) ? this.classList.add('active') : this.classList.remove('active');
+                    },
+                    configurable: true
+                }
+            );
+
+            elem.onclick = function (e) {
+                let target = e.target;
+                navs.forEach(elem => { elem.active = elem.id === target.id; });
+            }
+        });
+
+        window.onload = () => {
+            scrollTop = content.scrollTop;
+            (scrollTop == 0) ? nav.classList.add('expanded') : nav.classList.remove('expanded');
+        }
+
+        content.onscroll = () => {
+            scrollTop = content.scrollTop;
+            (scrollTop == 0) ? nav.classList.add('expanded') : nav.classList.remove('expanded');
+        }
+
+        const pos = {
+            frameH: 0,
+            inY: 0,
+            lastTouch: null
+        }
+
+        handle.addEventListener('touchstart', function (e) {
+            frame.classList.add('active');
+            let touch = e.touches[0];
+            pos.lastTouch = touch;
+            pos.frameH = parseFloat(window.getComputedStyle(frame).height.replace('px', ''));
+            pos.inY = touch.clientY;
+        });
+
+        handle.addEventListener('touchmove', function (e) {
+            let touch = e.touches[0];
+            pos.lastTouch = touch;
+            frame.style.height = adjustHeight((pos.frameH - (touch.clientY - pos.inY))) + 'px';
+        });
+
+        handle.addEventListener('touchend', function (e) {
+            frame.classList.remove('active');
+            let touch = e.touches[0];
+            frame.style.height = adjustHeight((pos.frameH - (pos.lastTouch.clientY - pos.inY)), true) + 'px';
+        });
+
+        function adjustHeight(input, reset) {
+            const limits = {
+                max: document.documentElement.clientHeight - 100,
+                min: 35
+            }
+            if (reset) {
+                let average = (limits.max - limits.min) / 2;
+                return input > average ? limits.max : limits.min;
+            }
+            return Math.max(limits.min, Math.min(limits.max, input));
+        }
+    </script>
+</body>
+
+</html>
