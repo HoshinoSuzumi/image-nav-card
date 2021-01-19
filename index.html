@@ -185,6 +185,10 @@
     </div>
 
     <script>
+        const limits = {
+            max: document.documentElement.clientHeight - 100,
+            min: 35
+        }
         const nav = document.querySelector('.nav');
         const navs = document.querySelectorAll('.nav .item');
         const frame = document.querySelector('.frame');
@@ -248,10 +252,6 @@
         });
 
         function adjustHeight(input, reset) {
-            const limits = {
-                max: document.documentElement.clientHeight - 100,
-                min: 35
-            }
             if (reset) {
                 let average = (limits.max - limits.min) / 2;
                 return input > average ? limits.max : limits.min;
