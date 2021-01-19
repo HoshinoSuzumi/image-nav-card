@@ -232,21 +232,18 @@
 
         handle.addEventListener('touchstart', function (e) {
             frame.classList.add('active');
-            let touch = e.touches[0];
-            pos.lastTouch = touch;
+            pos.lastTouch = e.touches[0];
             pos.frameH = parseFloat(window.getComputedStyle(frame).height.replace('px', ''));
-            pos.inY = touch.clientY;
+            pos.inY = pos.lastTouch.clientY;
         });
 
         handle.addEventListener('touchmove', function (e) {
-            let touch = e.touches[0];
-            pos.lastTouch = touch;
-            frame.style.height = adjustHeight((pos.frameH - (touch.clientY - pos.inY))) + 'px';
+            pos.lastTouch = e.touches[0];
+            frame.style.height = adjustHeight((pos.frameH - (pos.lastTouch.clientY - pos.inY))) + 'px';
         });
 
         handle.addEventListener('touchend', function (e) {
             frame.classList.remove('active');
-            let touch = e.touches[0];
             frame.style.height = adjustHeight((pos.frameH - (pos.lastTouch.clientY - pos.inY)), true) + 'px';
         });
 
