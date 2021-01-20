@@ -84,13 +84,13 @@
             background-position-y: center;
             object-fit: cover;
             cursor: pointer;
-            will-change: padding;
-            transition-property: padding;
+            transition-property: padding, padding-bottom;
             transition: all .15s ease-in-out;
         }
 
         .nav.expanded .item {
             padding-bottom: 3rem;
+            will-change: padding, padding-bottom;
         }
 
         .item:last-child {
@@ -138,10 +138,43 @@
         .content pre:last-child {
             margin-bottom: 3rem;
         }
+
+        .bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .bar button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            color: #fff;
+            outline: none;
+            background-color: transparent;
+            border: 1px #fff solid;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .bar button:hover {
+            color: #fff;
+            background-color:  rgba(255, 255, 255, 0.15);
+        }
+
+        .bar button:active {
+            color: #0e0e0e;
+            background-color:#fff;
+        }
     </style>
 </head>
 
 <body>
+    <header class="bar">
+        <button onclick="javascript:frame.style.height = adjustHeight(9999, true) + 'px';">Expand</button>
+        <button onclick="javascript:frame.style.height = adjustHeight(0, true) + 'px';">Collapse</button>
+    </header>
     <div class="frame">
         <div class="handle">
             <div class="handle-bar"></div>
