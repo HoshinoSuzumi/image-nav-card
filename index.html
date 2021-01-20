@@ -235,6 +235,7 @@
         }
 
         handle.addEventListener('touchstart', function (e) {
+            e.preventDefault();
             frame.classList.add('active');
             pos.lastTouch = e.touches[0];
             pos.frameH = parseFloat(window.getComputedStyle(frame).height.replace('px', ''));
@@ -242,11 +243,13 @@
         });
 
         handle.addEventListener('touchmove', function (e) {
+            e.preventDefault();
             pos.lastTouch = e.touches[0];
             frame.style.height = adjustHeight((pos.frameH - (pos.lastTouch.clientY - pos.inY))) + 'px';
         });
 
         handle.addEventListener('touchend', function (e) {
+            e.preventDefault();
             frame.classList.remove('active');
             frame.style.height = adjustHeight((pos.frameH - (pos.lastTouch.clientY - pos.inY)), true) + 'px';
         });
