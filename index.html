@@ -284,7 +284,8 @@
         handle.addEventListener('touchend', function (e) {
             e.preventDefault();
             frame.classList.remove('active');
-            frame.style.height = adjustHeight((pos.frameH - (pos.lastTouch.clientY - pos.inY)), true) + 'px';
+            frame.style.height = adjustHeight((pos.frameH - (pos.lastTouch.clientY - pos.inY))) + 'px';
+            // frame.style.height = adjustHeight((pos.frameH - (pos.lastTouch.clientY - pos.inY)), true) + 'px';
         });
 
         function adjustHeight(input, reset) {
