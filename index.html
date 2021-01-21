@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Image Nav</title>
     <style>
+        @font-face {
+            font-family: PingFangSC;
+            src: url('assets/fonts/PingFangSC-Standard.ttf');
+        }
+
         body {
             width: 100%;
             height: 100vh;
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: PingFangSC, sans-serif;
             background-color: rgb(34, 34, 34);
         }
 
@@ -41,16 +46,6 @@
         .nav::-webkit-scrollbar {
             display: none;
         }
-
-        /* .handle {
-            width: 20px;
-            height: 4px;
-            border: none;
-            border-radius: 5px;
-            background-color: rgb(204, 204, 204);
-            margin: -15px auto 10px auto;
-            cursor: pointer;
-        } */
 
         .handle {
             width: 100%;
@@ -82,15 +77,16 @@
             background-size: 125%;
             background-position: top;
             background-position-y: center;
+            -o-object-fit: cover;
             object-fit: cover;
             cursor: pointer;
-            transition-property: padding, padding-bottom;
+            /* transition-property: padding, padding-bottom; */
             transition: all .15s ease-in-out;
         }
 
         .nav.expanded .item {
             padding-bottom: 3rem;
-            will-change: padding, padding-bottom;
+            /* will-change: padding, padding-bottom; */
         }
 
         .item:last-child {
@@ -99,6 +95,9 @@
 
         .item h5 {
             pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
             user-select: none;
             margin: 0;
         }
@@ -160,12 +159,12 @@
 
         .bar button:hover {
             color: #fff;
-            background-color:  rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.15);
         }
 
         .bar button:active {
             color: #0e0e0e;
-            background-color:#fff;
+            background-color: #fff;
         }
     </style>
 </head>
@@ -180,27 +179,27 @@
             <div class="handle-bar"></div>
         </div>
         <div class="nav expanded">
-            <div class="item" id="all" style="background-image: url('img/nav1.jpg')">
+            <div class="item" id="all" style="background-image: url('assets/img/nav1.jpg')">
                 <h5>全部</h5>
                 <div class="underline"></div>
             </div>
-            <div class="item" id="landscape" style="background-image: url('img/nav2.jpg')">
+            <div class="item" id="landscape" style="background-image: url('assets/img/nav2.jpg')">
                 <h5>风景</h5>
                 <div class="underline"></div>
             </div>
-            <div class="item" id="building" style="background-image: url('img/nav3.jpg')">
+            <div class="item" id="building" style="background-image: url('assets/img/nav3.jpg')">
                 <h5>建筑</h5>
                 <div class="underline"></div>
             </div>
-            <div class="item" id="animals" style="background-image: url('img/nav2.jpg')">
+            <div class="item" id="animals" style="background-image: url('assets/img/nav2.jpg')">
                 <h5>动物</h5>
                 <div class="underline"></div>
             </div>
-            <div class="item" id="starsky" style="background-image: url('img/nav3.jpg')">
+            <div class="item" id="starsky" style="background-image: url('assets/img/nav3.jpg')">
                 <h5>星空</h5>
                 <div class="underline"></div>
             </div>
-            <div class="item" id="other" style="background-image: url('img/nav2.jpg')">
+            <div class="item" id="other" style="background-image: url('assets/img/nav2.jpg')">
                 <h5>其他</h5>
                 <div class="underline"></div>
             </div>
